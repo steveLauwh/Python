@@ -1,6 +1,6 @@
-﻿# Python
+# Python
 
-![](https://github.com/steveLauwh/Python/image/python.PNG)
+![](https://github.com/steveLauwh/Python/raw/master/image/python.PNG)
 
 Python 3 版本
 
