@@ -6,8 +6,10 @@ python 一切皆对象。
 
 shell 终端，设置环境变量
 
+```
 $ PATH=$PATH:/usr/local/python3/bin/python3
 $ python3 --version
+```
 
 * 命令行方式：在 Linux 终端，输入 python 或 ipython 进入
 * 程序方式：例如写一个 hello.py 文件，执行 `python hello.py`
