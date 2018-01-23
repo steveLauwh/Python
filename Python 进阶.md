@@ -98,15 +98,14 @@ f.close()
 
 python 是胶水语言，有丰富的模块和库。
 
-import 语句，导入模块
+一个 .py 文件就构成一个模块。
 
 ```python
+# import 语句，导入模块
 import module1[, module2[,... moduleN]
 ```
-
-from...import ... 语句，从模块中导入一个指定的部分到当前命名空间，也可以把模块的所有内容全都导入到当前的命名空间
-
 ```python
+# from...import ... 语句，从模块中导入一个指定的部分到当前命名空间，也可以把模块的所有内容全都导入到当前的命名空间
 from modname import name1[, name2[, ... nameN]]
 
 from modname import *  
@@ -124,8 +123,118 @@ else:
    print('我来自另一模块')
 ```
 
-包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。
+可以将功能相似的模块放在同一个文件夹中，构成一个模块包，包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。
 
-## 错误异常处理
+如：`import filedir.module`
+
+该文件夹下必须包含一个 `__init__.py` 的文件，说明该文件夹是一个模块包。
+
+## 异常处理
+
+异常处理的格式：
+
+```python
+try:
+    ...
+except exception1:
+    ...
+except exception2:
+    ...
+except:
+    ...
+else:
+    ...
+finally:
+    ...
+```
+抛出指定的异常：raise 语句
+
+```python
+# 定义函数
+def temp_convert(var):
+    try:
+        return int(var)
+    except ValueError:
+        print ('参数没有包含数字')
+
+# 调用函数
+temp_convert('xyz');
+```
+
+## 迭代器
+
+迭代器含义与 C++ STL 迭代器一样，python 中迭代器有两种基本方法：iter() 和 next()。
+
+字符串，列表或元组对象都可用于创建迭代器。
+
+```python
+#!/usr/bin/env python3
+
+import sys
+ 
+list=[1, 2, 3, 4, 5]
+it = iter(list)    # 创建迭代器对象
+
+while True:
+    try:
+        print(next(it))  # 输出迭代器的下一个元素
+    except StopIteration:
+        sys.exit()
+```
+
+## generator(生成器)
+
+使用了 yield 的函数被称为生成器(generator)。
+
+原理：在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值。并在下一次执行 next() 方法时从当前位置继续运行。
+
+```python
+#!/usr/bin/env python3
+ 
+import sys
+ 
+def fibonacci(n): # 生成器函数 - 斐波那契
+    a, b, counter = 0, 1, 0
+    while True:
+        if (counter > n): 
+            return
+        yield a
+        a, b = b, a + b
+        counter += 1
+f = fibonacci(10) # f 是一个迭代器，由生成器返回生成
+ 
+while True:
+    try:
+        print (next(f), end=" ")
+    except StopIteration:
+        sys.exit()
+```
+1.什么时候需要使用 yield ？
+
+## 表推导
+
+表推导(list comprehension)是快速生成表的方法。
+
+```python
+L = [x**2 for x in range(10)]
+
+print(L)
+```
+
+## 总结
+
+> **内置函数 dir()**
+
+dir() 用来查询一个类或者对象所有属性。如 `print dir(list)`
+
+> **内置函数 help()**
+
+help() 用来查询的说明文档。
+
+> **内置函数 enumerate()**
+
+每次循环中同时得到下标和元素。
+
+> **内置函数 zip()**
 
 
