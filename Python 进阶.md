@@ -33,6 +33,8 @@ print(x.eat())
 
 > **键盘输入：input()**
 
+input() 默认输入的为 str 格式。
+
 ```python
 #!/usr/bin/env python3
 
@@ -70,6 +72,8 @@ print('who are you: %s' %name)
 * 要改变文件当前的位置 seek(offset, from_what)
 * 关闭文件 close()
 
+对文件的操作，还有很多方法，直接看 Python 官方文档手册
+
 ```python
 #!/usr/bin/env python3
 
@@ -91,6 +95,36 @@ f.close()
 ```
 
 ## 模块
+
+python 是胶水语言，有丰富的模块和库。
+
+import 语句，导入模块
+
+```python
+import module1[, module2[,... moduleN]
+```
+
+from...import ... 语句，从模块中导入一个指定的部分到当前命名空间，也可以把模块的所有内容全都导入到当前的命名空间
+
+```python
+from modname import name1[, name2[, ... nameN]]
+
+from modname import *  
+```
+
+每个模块都有一个 __name__ 属性，当其值是'__main__'时，表明该模块自身在运行，否则是被引入。
+
+```python
+#!/usr/bin/env python3
+# Filename: using_name.py
+
+if __name__ == '__main__':
+   print('程序自身在运行')
+else:
+   print('我来自另一模块')
+```
+
+包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。
 
 ## 错误异常处理
 
