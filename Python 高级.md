@@ -25,7 +25,7 @@ def f(x):
 
 r = map(f, [1, 2, 3, 4, 5, 6])
 
-print(r)
+print(list(r))
 ```
 
 reduce 接收两个参数，第一个参数为函数，第二参数是 Iterable，但是这个函数必须接收两个参数，reduce 把结果继续和序列的下一个元素做累积计算。
@@ -50,14 +50,12 @@ print(r)   # 13579
 ```python
 #!/usr/bin/env python3
 
-from functools import reduce
-
 def is_odd(n):
     return n % 2 == 1
     
 r = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9]) 
 
-print(r)   
+print(list(r)) 
 ```
 
 > **sorted**
@@ -66,6 +64,58 @@ print(r)
 
 对字符串排序，是按照 ASCII 的大小比较的。
 
-## 闭包
+```python
+#!/usr/bin/env python3
 
-## 装饰器
+print(sorted([-5, 19, 30, -23], key=abs))
+```
+
+## 闭包(closure)
+
+函数对象作为某个函数的返回结果。
+
+返回函数不要引用任何循环变量，或者后续会发生变化的变量。
+
+```python
+#!/usr/bin/env python3
+
+def f(j):
+    def g():
+        return j*j 
+    return g
+
+g1 = f(2)
+
+g2 = f(3)
+
+print(g1())
+
+print(g2())
+```
+
+## 装饰器(decorator)
+
+装饰器可以对一个函数、方法或者类进行封装，更加抽象。提高了程序的可重复利用性，并增加了程序的可读性。
+
+```python
+#!/usr/bin/env python3
+
+def decorator(F):
+    def new_F(a, b):
+        print("input", a, b)
+        return F(a, b)
+    return new_F
+
+# get square sum
+@decorator
+def square_sum(a, b):
+    return a**2 + b**2
+
+# get square diff
+@decorator
+def square_diff(a, b):
+    return a**2 - b**2
+
+print(square_sum(3, 4))
+print(square_diff(3, 4))
+```
