@@ -4,6 +4,12 @@
 
 Python 3 版本
 
+## 目录
+
+* [Python 入门](https://github.com/steveLauwh/Python/blob/master/Python%20%E5%85%A5%E9%97%A8.md) 
+* [Python 进阶](https://github.com/steveLauwh/Python/blob/master/Python%20%E8%BF%9B%E9%98%B6.md)
+* [Python 高级](https://github.com/steveLauwh/Python/blob/master/Python%20%E9%AB%98%E7%BA%A7.md)
+* [Python Examples](https://github.com/steveLauwh/Python/tree/master/pythonExercise)
 
 ## 参考资料
 
