@@ -11,3 +11,5 @@ Python 操作 MySQL 数据库需要使用驱动，PyMySQL 是在 Python3.x 版�
 **2. MySQL 数据库安装**
 
 **3. 使用 Python 对 MySQL 数据库表的增删查改操作**
+
+![](https://github.com/steveLauwh/Python/raw/master/image/DBAPI.png)
