@@ -4,7 +4,7 @@
 
 Python 与 Java/C++ 一样，都可以进行面向对象编程(OOP)。
 
-* class(类)、object(对象)、attribute(属性)、method(方法)、inheritance(继承)、override(重写)、多重继承
+* class(类)、object(对象)、attribute(属性)、method(方法)、inheritance(继承)、override(重写)、多重继承、多态
 
 * 类的私有属性：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问，可以在类内部的方法中使用
 
@@ -15,6 +15,8 @@ Python 与 Java/C++ 一样，都可以进行面向对象编程(OOP)。
 * 特殊方法：`__init__()`，创建对象会自动调用；类似构造函数概念
 
 * 运算符也是特殊方法，可以进行重载
+
+* 类名通常是大写开头的单词
 
 ```python
 class Animal(object):
@@ -27,7 +29,54 @@ x = Animal()
 print(x.name)
 
 print(x.eat())
+
+x.age = 1  # Python 允许对实例变量绑定任何数据
+
+print(x.age)
 ```
+
+## 多态
+
+```python
+#!/usr/bin/env python3
+
+class Animal(object):
+    def run(self):
+        print('Animal is running...')
+
+class Dog(Animal):
+    def run(self):
+        print('Dog is running...')
+
+class Cat(Animal):
+    def run(self):
+        print('Cat is running...')
+
+# Python 不一定要继承 Animal 类型
+class Xx(object):
+	def run(self):
+		print('Xx is running...')
+
+# 多态
+def run_twice(animal):
+    animal.run()
+    animal.run()
+
+run_twice(Animal())
+
+run_twice(Dog())
+
+run_twice(Cat())
+
+run_twice(Xx())
+```
+
+著名的“开闭”原则：
+
+对扩展开放：允许新增 Animal 子类；
+
+对修改封闭：不需要修改依赖 Animal 类型的 run_twice() 等函数。
+
 
 ## 文件的输入和输出
 
