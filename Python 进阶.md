@@ -52,10 +52,10 @@ class Cat(Animal):
     def run(self):
         print('Cat is running...')
 
-# Python 不一定要继承 Animal 类型
+# 不一定要继承 Animal 类型，需要 run() 方法
 class Xx(object):
-	def run(self):
-		print('Xx is running...')
+    def run(self):
+	print('Xx is running...')
 
 # 多态
 def run_twice(animal):
