@@ -1,5 +1,84 @@
 # Python 高级
 
+## `__slots__`
+
+创建了一个 class 的实例后，我们可以给该实例绑定任何属性和方法，这就是动态语言的灵活性。
+
+Python 允许在定义 class 的时候，定义一个特殊的 `__slots__` 变量，来限制该 class 实例能添加的属性。
+
+```python
+class Student(object):
+    __slots__ = ('name', 'age') # 用 tuple 定义允许绑定的属性名称
+```
+
+注意：`__slots__` 只对当前类有效，对子类没有限制。
+
+## @property
+
+Python 内置的 @property 装饰器是负责把一个方法变成属性调用的。
+
+```python
+#!/usr/bin/env python3
+
+class Screen(object):
+    @property
+    def width(self):
+    	return self._width
+
+    @width.setter
+    def width(self, value):
+    	if not isinstance(value, int):
+            raise ValueError('width must be an integer!')
+    	self._width = value
+
+    @property
+    def height(self):
+    	return self._height
+
+    @height.setter
+    def height(self, value):
+    	if not isinstance(value, int):
+            raise ValueError('height must be an integer!')
+    	self._height = value
+
+    @property
+    def resolution(self):
+    	return self._width * self._height
+
+s = Screen()
+s.width = 1024
+s.height = 768
+print('resolution =', s.resolution)
+if s.resolution == 786432:
+    print('测试通过!')
+else:
+    print('测试失败!')
+```
+
+## Mix-In
+
+Python 支持多重继承，Mix-In 它本质上一种简化了的、受限的、简单的多重继承。
+
+Mix-In 思想在 Python 中实现方式就是多重继承，但需要注意一些使用限制避免使类的关系复杂。
+
+Mix-In 类使用需要注意的限制：
+
+1）Mix-In 类功能需要单一，若要实现多个功能就需要创建多个 Mix-In 类
+
+2）其次 Mix-In 类不依赖子类的实现，不能继承除了 Mix-In 以外的类
+
+3）不单独生成使用实例（理解为一个抽象类）
+
+Mix-In 的类状图为一棵倒立的树型图。
+
+```python
+class MyTCPServer(TCPServer, ForkingMixIn):
+    pass
+
+class MyUDPServer(UDPServer, ThreadingMixIn):
+    pass
+```
+
 ## 高阶函数
 
 一个函数可以接收另一个函数作为参数，这种函数就称之为 高阶函数。
