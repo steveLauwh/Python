@@ -55,6 +55,32 @@ else:
     print('测试失败!')
 ```
 
+## type() 动态创建类
+
+type() 既可以返回一个对象的类型，同时也可以创建新的类型。
+
+使用 type() 动态创建类，传入三个参数：
+
+* class 的名称；
+* 继承的父类集合，注意 Python 支持多重继承，如果只有一个父类，别忘了 tuple 的单元素写法
+* class 的方法名称与函数绑定
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+def fn(self, name='world'): # 先定义函数
+    print('Hello, %s.' % name)
+
+Hello = type('Hello', (object,), dict(hello=fn)) # 创建Hello class
+
+h = Hello()
+print('call h.hello():')
+h.hello()
+print('type(Hello) =', type(Hello))
+print('type(h) =', type(h))
+```
+
 ## Mix-In
 
 Python 支持多重继承，Mix-In 它本质上一种简化了的、受限的、简单的多重继承。
