@@ -1,4 +1,4 @@
-## __init__ 和 __new__ 特殊方法
+## `__init__ 和 __new__` 特殊方法
 
 __new__ 特殊方法是在类创建的时候调用，第一个参数是 cls，用来控制类的创建行为，属于类级别，最先调用。
 
@@ -17,7 +17,7 @@ class Person(object):
         self.name = name
         self.age = age 
     def __str__(self):
-        return '<Person: %s(%s)>' %(self.name, self.age)
+        return 'Person: %s, %s' %(self.name, self.age)
 
 if __name__ == '__main__':
     p = Person('CC', 20) 
