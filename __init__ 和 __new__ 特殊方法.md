@@ -21,6 +21,6 @@ class Person(object):
 
 if __name__ == '__main__':
     p = Person('CC', 20) 
-    print(p
+    print(p)
 ```
 
