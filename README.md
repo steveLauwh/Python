@@ -8,7 +8,8 @@ Python 3 版本
 
 * [Python 入门](https://github.com/steveLauwh/Python/blob/master/Python%20%E5%85%A5%E9%97%A8.md) 
 * [Python 进阶](https://github.com/steveLauwh/Python/blob/master/Python%20%E8%BF%9B%E9%98%B6.md)
-  + [`__init__ 和 __new__ 特殊方法`](https://github.com/steveLauwh/Python/blob/master/__init__%20%E5%92%8C%20__new__%20%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95.md)
+  + [`__init__ 和 __new__ 特殊方法`](https://github.com/steveLauwh/Python/blob/master/pythonIntermediate/__init__%20%E5%92%8C%20__new__%20%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95.md)
+  + [virtualenv 工具](https://github.com/steveLauwh/Python/blob/master/pythonIntermediate/virtualenv%20%E5%B7%A5%E5%85%B7.md)
 * [Python 高级](https://github.com/steveLauwh/Python/blob/master/Python%20%E9%AB%98%E7%BA%A7.md)
 * [Python 标准库](https://github.com/steveLauwh/Python/tree/master/pythonStandardLibrary)
 * [Python Examples](https://github.com/steveLauwh/Python/tree/master/pythonExercise)
