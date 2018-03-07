@@ -15,6 +15,10 @@ Python 3 版本
 * [Python 标准库](https://github.com/steveLauwh/Python/tree/master/pythonStandardLibrary)
 * [Python Examples](https://github.com/steveLauwh/Python/tree/master/pythonExercise)
 
+## 收集
+
+* [你的Python到底有没有入门？来做个60秒小测试吧](https://zhuanlan.zhihu.com/p/28075008)
+
 ## 参考资料
 
 * [Python 官网文档](https://docs.python.org/3/)
