@@ -18,6 +18,8 @@ Python 3 版本
 ## 收集
 
 * [你的Python到底有没有入门？来做个60秒小测试吧](https://zhuanlan.zhihu.com/p/28075008)
+* [Google Python Style Guide](http://google.github.io/styleguide/pyguide.html)
+* [Google Python 风格指南](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/)
 
 ## 参考资料
 
